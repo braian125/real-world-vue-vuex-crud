@@ -44,8 +44,7 @@ export default {
         return {}
     },
     computed: {
-        ...mapGetters({'users': 'user/users'}),
-        ...mapGetters({'loading': 'loading'})
+        ...mapGetters({'users': 'user/users', 'loading': 'loading'})
     },
     methods: {
         destroy(user) {
@@ -57,8 +56,8 @@ export default {
         }
     },
     created() {
-        this.users.length==0?this.$store.dispatch('user/all'):'';
-        //this.$store.dispatch('user/all')
+        //this.users.length==0?this.$store.dispatch('user/all'):'';
+        this.$store.dispatch('user/all')
     }
 }
 </script>
