@@ -35,7 +35,7 @@ export default {
             get() {
                 return this.id?this.users.filter(user => user.id == this.id)[0]:{}
             },
-            set(user) {}
+            set() {}
         },
         loading() {
             return this.$store.getters['loading']
@@ -51,7 +51,7 @@ export default {
                     type: 'success'
                 })
             })
-            .catch((error) => {
+            .catch(() => {
                 this.$notify({
                     title: 'Warning',
                     message: 'Error adding user',

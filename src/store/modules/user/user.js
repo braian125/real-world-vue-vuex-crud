@@ -8,7 +8,11 @@ export default {
     },
     mutations: {
         SET_USERS: (state, payload) => state.users = payload,
-        SET_USER: (state, payload) => state.users[state.users.findIndex(user => user.id === payload.id)] = payload
+        SET_USER: (state, payload) => state.users[state.users.findIndex(user => user.id === payload.id)] = payload,
+        SOCKET_USER: (state, payload) => {
+            console.log(payload)
+            state.users.push(payload)
+        },
     },
     actions: {
         all({commit}) {
